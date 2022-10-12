@@ -34,7 +34,7 @@ resource "tfe_variable" "this" {
   workspace_id = tfe_workspace.this[each.key].id
 
   key         = "TF_CLI_ARGS_plan"
-  value       = "-var-file=${each.key}.tfvars"
+  value       = "-var-file=vars/${each.key}.tfvars"
   category    = "env"
   description = "Set the workspace run to use a vars file within the repository."
 }
